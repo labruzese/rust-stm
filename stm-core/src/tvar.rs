@@ -218,7 +218,7 @@ where
     /// `write_atomic` writes a value atomically, without starting a transaction.
     /// It is semantically equivalent to
     /// ```
-    /// # use fast_stm::*;
+    /// # use stm_core::*;
     ///
     /// let var = TVar::new(0);
     /// atomically(|trans| var.write(trans, 1));
