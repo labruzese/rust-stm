@@ -1,12 +1,12 @@
 use std::hint::black_box;
-use std::sync::atomic::{AtomicU32, Ordering};
 use std::sync::RwLock;
+use std::sync::atomic::{AtomicU32, Ordering};
 
 use criterion::{
-    criterion_group, criterion_main, AxisScale, BenchmarkId, Criterion, PlotConfiguration,
-    Throughput,
+    AxisScale, BenchmarkId, Criterion, PlotConfiguration, Throughput, criterion_group,
+    criterion_main,
 };
-use rust_stm::{atomically, init_transaction, TVar};
+use stm::{TVar, atomically, init_transaction};
 
 /// Read routines benchmarks
 ///

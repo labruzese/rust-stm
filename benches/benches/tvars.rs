@@ -1,7 +1,7 @@
 use std::hint::black_box;
 
-use criterion::{criterion_group, criterion_main, Criterion};
-use rust_stm::{init_transaction, TVar};
+use criterion::{Criterion, criterion_group, criterion_main};
+use stm::{TVar, init_transaction};
 
 #[allow(unused)]
 #[derive(Debug, Clone, Copy)]

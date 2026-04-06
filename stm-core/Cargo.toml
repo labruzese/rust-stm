@@ -19,28 +19,16 @@ readme = "README.md"
 keywords = ["stm", "atomic", "transaction", "lockfree", "concurrency"]
 categories = ["concurrency"]
 
-
 [lib]
-# This field points at where the crate is located, relative to the Cargo.toml.
 path = "src/lib.rs"
-
-# A flag for enabling unit tests for this target. This is used by `cargo test`.
 test = true
-
-# A flag for enabling documentation tests for this target. This is only
-# relevant for libraries, it has no effect on other sections. This is used by
-# `cargo test`.
 doctest = true
-
-# A flag for enabling benchmarks for this target. This is used by `cargo bench`.
 bench = true
-
-# A flag for enabling documentation of this target. This is used by `cargo doc`.
 doc = true
-
 
 [features]
 default = []
+bench = []
 
 [dependencies.parking_lot]
 version = "0.5"

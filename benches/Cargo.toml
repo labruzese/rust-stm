@@ -5,6 +5,12 @@ edition.workspace = true
 license.workspace = true
 authors = ["Isaie Muron <github@imrn.fr>"]
 
+[dependencies]
+stm = { path = "..", features = ["bench"] }
+
+[dev-dependencies]
+criterion.workspace = true
+
 [[bench]]
 name = "read-time"
 path = "benches/read.rs"

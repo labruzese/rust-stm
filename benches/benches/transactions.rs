@@ -1,8 +1,8 @@
 use criterion::{
-    criterion_group, criterion_main, AxisScale, BenchmarkId, Criterion, PlotConfiguration,
-    Throughput,
+    AxisScale, BenchmarkId, Criterion, PlotConfiguration, Throughput, criterion_group,
+    criterion_main,
 };
-use rust_stm::{commit_transaction, init_transaction, TVar};
+use stm::{TVar, commit_transaction, init_transaction};
 
 /// Transaction commit routine benchmarks
 pub fn criterion_benchmark(c: &mut Criterion) {
