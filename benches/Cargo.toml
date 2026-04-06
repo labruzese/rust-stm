@@ -1,0 +1,26 @@
+[package]
+name = "benches"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+authors = ["Isaie Muron <github@imrn.fr>"]
+
+[[bench]]
+name = "read-time"
+path = "benches/read.rs"
+harness = false
+
+[[bench]]
+name = "write-time"
+path = "benches/write.rs"
+harness = false
+
+[[bench]]
+name = "tvar-struct"
+path = "benches/tvars.rs"
+harness = false
+
+[[bench]]
+name = "transaction-struct"
+path = "benches/transactions.rs"
+harness = false

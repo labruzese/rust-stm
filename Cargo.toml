@@ -1,5 +1,6 @@
 [package]
 name = "stm"
+edition = "2024"
 version = "0.4.0"
 authors = ["Marthog <Marthog@users.noreply.github.com>"]
 
@@ -16,6 +17,18 @@ readme = "README.md"
 
 keywords = ["stm", "atomic", "transaction", "lockfree", "concurrency"]
 categories = ["concurrency"]
+
+[workspace.package]
+edition = "2024"
+version = "0.4.0"
+license = "MIT OR Apache-2.0"
+
+[workspace]
+members = ["stm-core", "benches"]
+
+[workspace.dependencies]
+rust-stm = { path = ".", features = ["bench"] }
+criterion = "0.5"
 
 [lib]
 # This field points at where the crate is located, relative to the Cargo.toml.

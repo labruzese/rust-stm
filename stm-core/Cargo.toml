@@ -1,5 +1,6 @@
 [package]
 name = "stm-core"
+edition = "2024"
 version = "0.4.0"
 authors = ["Marthog <Marthog@users.noreply.github.com>"]
 
@@ -44,4 +45,3 @@ default = []
 [dependencies.parking_lot]
 version = "0.5"
 default-features = false
-
