@@ -23,7 +23,7 @@ use super::result::StmError::*;
 use super::result::*;
 use super::tvar::{TVar, VarControlBlock};
 
-thread_local!(static TRANSACTION_RUNNING: Cell<bool> = Cell::new(false));
+thread_local!(static TRANSACTION_RUNNING: Cell<bool> = const { Cell::new(false) });
 
 /// `TransactionGuard` checks against nested STM calls.
 ///
@@ -292,7 +292,7 @@ impl Transaction {
         // Create control block for waiting.
         let ctrl = Arc::new(ControlBlock::new());
 
-        let vars = mem::replace(&mut self.vars, BTreeMap::new());
+        let vars = std::mem::take(&mut self.vars);
         let mut reads = Vec::with_capacity(self.vars.len());
 
         let blocking = vars

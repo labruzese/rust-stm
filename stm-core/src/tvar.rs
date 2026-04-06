@@ -11,7 +11,6 @@ use std::any::Any;
 use std::cmp;
 use std::fmt::{self, Debug};
 use std::marker::PhantomData;
-use std::mem;
 use std::sync::atomic::{self, AtomicUsize};
 use std::sync::{Arc, Weak};
 
@@ -72,7 +71,7 @@ impl VarControlBlock {
         let threads = {
             let mut guard = self.waiting_threads.lock();
             let inner: &mut Vec<_> = &mut guard;
-            mem::replace(inner, Vec::new())
+            std::mem::take(inner)
         };
 
         // Take all, that are still alive.
