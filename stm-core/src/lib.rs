@@ -118,16 +118,20 @@
 extern crate parking_lot;
 
 mod result;
+mod tarc;
 mod transaction;
 mod tvar;
+mod tweak;
 
 #[cfg(test)]
 mod test;
 
 pub use result::*;
+pub use tarc::TArc;
 pub use transaction::Transaction;
 pub use transaction::TransactionControl;
 pub use tvar::TVar;
+pub use tweak::TWeak;
 
 #[inline]
 /// Call `retry` to abort an operation and run the whole transaction again.
